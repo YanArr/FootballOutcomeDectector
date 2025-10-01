@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fbmatch-service
+spec:
+  selector:
+    app: fbmatch
+  ports:
+  - port: 80        # service port (inside cluster, external if LoadBalancer)
+    targetPort: 80  # forwards to pod containerPort
+  type: LoadBalancer
